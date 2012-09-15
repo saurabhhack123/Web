@@ -1,0 +1,48 @@
+Program which contain a simple set of functions
+that take the graph representing the web and output a file in the
+DOT language (https://en.wikipedia.org/wiki/DOT_language). This file
+can be used by, for example, Graphviz (www.graphviz.org) to produce 
+an ilustrative image of the graph thus making easier to understand
+the results of the ranking algorithm.
+
+This implementation mainly contain two file's 
+
+web_crawler.py : This program(simple web crawler) is creating a web-graph and 
+calculate rank's of a page using rank algorithm (Like Page rank algorithm) 
+{This algorithm I learned in udacity course(CS 101)}
+
+graph.py :Here I define the procedures that take the results from
+the search engine and produce strings in appropiate format to be writen
+to a DOT file. Each node has its (abbreviated) url and its rank as the
+displayed name. Nodes may vary in sizes according to their rank.
+
+
+To produce an actual image from the DOT file you will need to download
+the Graphviz package (www.graphviz.org).
+
+How to Run:
+
+1.open cmd and go to directory where your both file stored 
+    Like : cd C:\Users\saurabhgeek\Documents\webgraph
+	
+2.Run web_crawler file using following command
+C:\Users\saurabhgeek\Documents\webgraph>python web_crawler.py
+
+3.open python shell 
+
+C:\Users\saurabhgeek\Documents\webgraph>python
+
+4.>>>from graph import *
+
+5.>>>make_dot_file("filename.dot", graph, ranks)
+
+6.This will create the file filename.dot which can be used by Graphviz to produce an image
+for example, an svg image, so again come back to cmd prompt (using ctrl+Z)
+
+>>>^Z
+
+7.C:\Users\saurabhgeek\Documents\webgraph>circo -Tsvg filename.dot -o filename.svg
+
+                                               OR
+											   
+   C:\Users\saurabhgeek\Documents\webgraph>dot-Tsvg filename.dot -o filename.svg
